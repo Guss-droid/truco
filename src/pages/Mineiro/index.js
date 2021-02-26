@@ -120,7 +120,7 @@ export default function Mineiro() {
                 </p>
                             <hr />
                             <section className="Add-body">
-                                <button className="btn-MarcadorM" onClick={marcadorPts}>Marcador</button>
+                                <button className="btn-ToMain2" onClick={marcadorPts}>Marcador</button>
                             </section>
                             <section>
                                 <button className="btn-ToMain2" onClick={toMain}>Voltar para a pagina principal</button>
