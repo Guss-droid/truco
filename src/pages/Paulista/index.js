@@ -52,7 +52,7 @@ export default function Paulista () {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div className="app">
+                        <div className="App">
                             <ButtonChange className="btn-mudou" onClick={trocaTema}>Mudar tema </ButtonChange>
                             <h2>Regras do Truco Paulista</h2>
                             <hr />

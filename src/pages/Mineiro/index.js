@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
-// import '../layouts/Paulista.css';
+import '../Layouts/Mineiro.css';
 
 export default function Mineiro() {
 
@@ -39,7 +39,7 @@ export default function Mineiro() {
   `;
 
     function marcadorPts() {
-        window.location.href = "/Marcador-Paulista"
+        window.location.href = "/Marcador-Mineiro"
     }
 
     function toMain() {
@@ -52,7 +52,7 @@ export default function Mineiro() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div>
+                        <div className="App">
                             <ButtonChange className="btn-mudou" onClick={trocaTema}>Mudar tema </ButtonChange>
                             <h2>Regras do Truco Mineiro</h2>
                             <hr />
@@ -120,10 +120,10 @@ export default function Mineiro() {
                 </p>
                             <hr />
                             <section className="Add-body">
-                                <button className="btn-Marcador" onClick={marcadorPts}>Marcador</button>
+                                <button className="btn-MarcadorM" onClick={marcadorPts}>Marcador</button>
                             </section>
-                            <section className="Add-body">
-                                <button className="btn-ToMain" onClick={toMain}>Voltar para a pagina principal</button>
+                            <section>
+                                <button className="btn-ToMain2" onClick={toMain}>Voltar para a pagina principal</button>
                             </section>
                         </div>
                     </Title>
