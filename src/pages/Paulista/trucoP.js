@@ -2,9 +2,9 @@ import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/global';
-import '../layouts/Paulista.css';
+// import '../layouts/Paulista.css';
 
-export default function Tab_Truco() {
+export default function Paulista() {
 
     const [theme, setTheme] = useState('light')
 

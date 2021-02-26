@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
-import GlobalTheme from '../../Temas/global';
-import '../layouts/hist.css';
+import GlobalTheme from '../../Temas/globals';
+// import '../layouts/hist.css';
 
 export default function Main() {
-
+ 
     const [theme, setTheme] = useState('light')
 
     const trocaTema = () => {
