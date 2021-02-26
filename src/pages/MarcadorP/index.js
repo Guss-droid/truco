@@ -214,15 +214,15 @@ export default function MarcadorP() {
                                 <br />
                                 Partidas ganhas: {partidasTime2}
                             </h2>
-                            <button className="btn-Add-Pts" onClick={adicionaPontos}>Adiciona pontos</button>
+                            <button className="btn-Add-Pts" onClick={adicionaPontos}>Adicionar pontos</button>
                             <hr />
                             <br />
                             <section>
-                                <button className="btn-ToMain1" onClick={toMain}>Voltar para a pagina inicial</button>
+                                <button className="btn-ToMain1" onClick={toMain}>Voltar para a página inicial</button>
                             </section>
                             <br />
                             <section>
-                                <button className="btn-ToMain1" onClick={tPaulista}>Voltar para a pagina de Truco paulista</button>
+                                <button className="btn-ToMain1" onClick={tPaulista}>Voltar para a página de Truco paulista</button>
                             </section>
                         </div>
                     </Title>

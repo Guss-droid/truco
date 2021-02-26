@@ -123,7 +123,7 @@ export default function Paulista () {
                                 <button className="btn-Marcador" onClick={marcadorPts}>Marcador</button>
                                 </section>
                                 <section>
-                                <button className="btn-ToMain" onClick={toMain}>Voltar para a pagina principal</button>
+                                <button className="btn-ToMain" onClick={toMain}>Voltar para a página principal</button>
                             </section>
                         </div>
                     </Title>
