@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
-import GlobalTheme from '../../Temas/global';
+import GlobalTheme from '../../Temas/globals';
 // import '../layouts/Paulista.css';
 
 export default function Paulista () {
