@@ -38,17 +38,17 @@ export default function MarcadorP() {
 
     function onTruco() {
         localStorage.setItem("truco", truco)
-        alert('A partida esta valendo 3 tentos')
+        alert('A partida esta valendo 4 tentos')
     }
 
     function onSeis() {
         localStorage.setItem("seis", seis)
-        alert('A partida esta valendo 6 tentos')
+        alert('A partida esta valendo 8 tentos')
     }
 
     function onNove() {
         localStorage.setItem("nove", nove)
-        alert('A partida esta valendo 9 tentos')
+        alert('A partida esta valendo 10 tentos')
     }
 
     function onDoze() {
@@ -59,45 +59,45 @@ export default function MarcadorP() {
     function partidasGanhas() {
         if (partidas >= 2) {
             alert("Time 1 ganhou o jogo")
-            window.location.href = "Marcador-Paulista"
+            window.location.href = "Marcador-Mineiro"
         }
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
-            window.location.href = "Marcador-Paulista"
+            window.location.href = "Marcador-Mineiro"
         }
     }
 
     function partidasVitoriosas() {
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
-            window.location.href = "Marcador-Paulista"
+            window.location.href = "Marcador-Mineiro"
         }
         if (partidas >= 2) {
             alert("Time 1 ganhou o jogo")
-            window.location.href = "Marcador-Paulista"
+            window.location.href = "Marcador-Mineiro"
         }
     }
 
     function juntaTentos() {
         setContador(
-            contador + 1
+            contador + 2
         )
         if (localStorage.getItem("truco")) {
             localStorage.removeItem("truco")
             setContador(
-                contador + 3
+                contador + 4
             )
         }
         if (localStorage.getItem("seis")) {
             localStorage.removeItem("seis")
             setContador(
-                contador + 6
+                contador + 8
             )
         }
         if (localStorage.getItem("nove")) {
             localStorage.removeItem("nove")
             setContador(
-                contador + 9
+                contador + 10
             )
         } if (localStorage.getItem("doze")) {
             localStorage.removeItem("doze")
@@ -121,24 +121,24 @@ export default function MarcadorP() {
 
     function juntaTentosTime2() {
         setContadorTime2(
-            contadorTime2 + 1
+            contadorTime2 + 2
         )
         if (localStorage.getItem("truco")) {
             localStorage.removeItem("truco")
             setContadorTime2(
-                contadorTime2 + 3
+                contadorTime2 + 4
             )
         }
         if (localStorage.getItem("seis")) {
             localStorage.removeItem("seis")
             setContadorTime2(
-                contadorTime2 + 6
+                contadorTime2 + 8
             )
         }
         if (localStorage.getItem("nove")) {
             localStorage.removeItem("nove")
             setContadorTime2(
-                contadorTime2 + 9
+                contadorTime2 + 10
             )
         } if (localStorage.getItem("doze")) {
             localStorage.removeItem("doze")
@@ -174,8 +174,8 @@ export default function MarcadorP() {
         window.location.href = "/"
     }
 
-    function tPaulista() {
-        window.location.href = "Paulista"
+    function tMineiro() {
+        window.location.href = "Mineiro"
     }
 
     return (
@@ -221,7 +221,7 @@ export default function MarcadorP() {
                             </section>
                             <br />
                             <section>
-                                <button onClick={tPaulista}>Voltar para a pagina de Truco paulista</button>
+                                <button onClick={tMineiro}>Voltar para a pagina de Truco Mineiro</button>
                             </section>
                         </div>
                     </Title>
