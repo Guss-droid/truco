@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
-// import '../layouts/Paulista.css';
+import '../Layouts/Paulista.css';
 
 export default function Paulista () {
 
@@ -52,7 +52,7 @@ export default function Paulista () {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div>
+                        <div className="app">
                             <ButtonChange className="btn-mudou" onClick={trocaTema}>Mudar tema </ButtonChange>
                             <h2>Regras do Truco Paulista</h2>
                             <hr />
@@ -121,8 +121,8 @@ export default function Paulista () {
                             <hr />
                             <section className="Add-body">
                                 <button className="btn-Marcador" onClick={marcadorPts}>Marcador</button>
-                            </section>
-                            <section className="Add-body">
+                                </section>
+                                <section>
                                 <button className="btn-ToMain" onClick={toMain}>Voltar para a pagina principal</button>
                             </section>
                         </div>

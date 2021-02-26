@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
+import '../Layouts/MarcadorP.css'
 
 export default function MarcadorP() {
 
@@ -184,7 +185,7 @@ export default function MarcadorP() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div>
+                        <div className="App">
                             <h2>
                                 Time 1
                                 <br />
@@ -192,17 +193,17 @@ export default function MarcadorP() {
                                 <br />
                                 Partidas ganhas: {partidas}
                             </h2>
-                            <button onClick={incrementaPontos}>Adicionar Pontos</button>
+                            <button className="btn-Add-Pts" onClick={incrementaPontos}>Adicionar Pontos</button>
                             <hr />
                             <br />
                             <section>
-                                <button onClick={onTruco}>Truco</button>
-                                <button onClick={onSeis}>Seis</button>
+                                <button className="btn-MarcadorP" onClick={onTruco}>Truco</button>
+                                <button className="btn-MarcadorP" onClick={onSeis}>Seis</button>
                             </section>
                             <br />
                             <section>
-                                <button onClick={onNove}>Nove</button>
-                                <button onClick={onDoze}>Doze</button>
+                                <button className="btn-MarcadorP" onClick={onNove}>Nove</button>
+                                <button className="btn-MarcadorP" onClick={onDoze}>Doze</button>
                             </section>
                             <br />
                             <hr />
@@ -213,15 +214,15 @@ export default function MarcadorP() {
                                 <br />
                                 Partidas ganhas: {partidasTime2}
                             </h2>
-                            <button onClick={adicionaPontos}>Adiciona pontos</button>
+                            <button className="btn-Add-Pts" onClick={adicionaPontos}>Adiciona pontos</button>
                             <hr />
                             <br />
                             <section>
-                                <button onClick={toMain}>Voltar para a pagina inicial</button>
+                                <button className="btn-ToMain1" onClick={toMain}>Voltar para a pagina inicial</button>
                             </section>
                             <br />
                             <section>
-                                <button onClick={tPaulista}>Voltar para a pagina de Truco paulista</button>
+                                <button className="btn-ToMain1" onClick={tPaulista}>Voltar para a pagina de Truco paulista</button>
                             </section>
                         </div>
                     </Title>

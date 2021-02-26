@@ -1,0 +1,61 @@
+.App {
+    text-align: center;
+  }
+
+  .Truco-body {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-TrucoP {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #61dafb;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+  .btn-TrucoP:hover {
+    background-color: #63d9fa;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+
+  .btn-TrucoM {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #ffae00;
+    border-radius: 6px;
+    color: #ff9100;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-TrucoM:hover{
+    background-color: #ff9100;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+
+  .btn-mudou{
+    padding: 5px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+    background-color: #000000;
+  }
+
+  .btn-mudou:hover{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }

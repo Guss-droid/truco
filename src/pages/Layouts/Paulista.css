@@ -1,0 +1,45 @@
+.App {
+    text-align: center;
+  }
+
+  .Add-body {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-Marcador{
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #61dafb;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-Marcador:hover{
+      cursor: pointer;
+      background-color: #17191f;
+      color: #ffffff;
+  }
+
+  .btn-ToMain{
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #61dafb;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-ToMain:hover{
+      cursor: pointer;
+      color: #ffffff;
+      background-color: #17191f;
+  }

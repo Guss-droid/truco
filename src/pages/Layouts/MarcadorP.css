@@ -1,0 +1,62 @@
+.App {
+    text-align: center;
+  }
+
+  .Add-body {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-MarcadorP{
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #61dafb;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-MarcadorP:hover{
+      cursor: pointer;
+      background-color: #00eeff;
+      color: #000000;
+  }
+
+  .btn-ToMain1{
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #61dafb;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-ToMain1:hover{
+      cursor: pointer;
+      color: #ffffff;
+      background-color: #002c55;
+  }
+
+  .btn-Add-Pts{
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #00617c;
+    border-radius: 6px;
+    color: #0096c0;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-Add-Pts:hover{
+      cursor: pointer;
+      background-color: #0096c0;
+      color: #17191f;
+  }

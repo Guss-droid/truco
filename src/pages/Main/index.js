@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
-// import '../layouts/hist.css';
+import '../Layouts/hist.css';
 
 export default function Main() {
  
@@ -60,7 +60,7 @@ export default function Main() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div>
+                        <div className="App">
                             <ButtonChange className="btn-mudou" onClick={trocaTema}>Mudar tema </ButtonChange>
                             <h2>Historia do truco</h2>
                             <hr />
@@ -102,24 +102,24 @@ export default function Main() {
                  <hr />
                             </p>
                             <section className="Truco-body">
-                                <button className="btn-trucoP" onClick={tPaulista}>
+                                <button className="btn-TrucoP" onClick={tPaulista}>
                                     Truco <br />
-                    Paulista
-                </button>
-                                <button className="btn-marcarP" onClick={marcadorPts}>
+                                   Paulista
+                                  </button>
+                                <button className="btn-TrucoP" onClick={marcadorPts}>
                                     Marcador
-                    <br />Paulista
-                </button>
+                                 <br />Paulista
+                                </button>
                             </section>
                             <section className="Truco-body">
-                                <button className="btn-trucoM" onClick={tMineiro}>
+                                <button className="btn-TrucoM" onClick={tMineiro}>
                                     Truco <br />
-                    Mineiro
-                </button>
-                                <button className="btn-marcarM" onClick={marcadorMinPts}>
+                                    Mineiro
+                                    </button>
+                                <button className="btn-TrucoM" onClick={marcadorMinPts}>
                                     Marcador
-                    <br /> Mineiro
-                </button>
+                              <br /> Mineiro
+                               </button>
                             </section>
                         </div>
                     </Title>
