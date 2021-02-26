@@ -4,7 +4,7 @@ import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/global';
 // import '../layouts/Paulista.css';
 
-export default function Paulista() {
+export default function Paulista () {
 
     const [theme, setTheme] = useState('light')
 
