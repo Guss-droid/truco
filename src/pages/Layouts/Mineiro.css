@@ -43,3 +43,21 @@
     background-color: #d48113;
     color: #000000;
   }
+
+  .btn-mudou{
+    padding: 5px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+    background-color: #000000;
+  }
+
+  .btn-mudou:hover{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }

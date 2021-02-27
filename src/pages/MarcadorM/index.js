@@ -39,21 +39,33 @@ export default function MarcadorP() {
 
     function onTruco() {
         localStorage.setItem("truco", truco)
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
         alert('A partida esta valendo 4 tentos')
     }
 
     function onSeis() {
         localStorage.setItem("seis", seis)
-        alert('A partida esta valendo 8 tentos')
+        localStorage.removeItem("truco")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
+        alert('A partida esta valendo 6 tentos')
     }
 
     function onNove() {
         localStorage.setItem("nove", nove)
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("doze")
         alert('A partida esta valendo 10 tentos')
     }
 
     function onDoze() {
         localStorage.setItem("doze", doze)
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
         alert('A partida esta valendo 12 tentos')
     }
 
@@ -61,10 +73,18 @@ export default function MarcadorP() {
         if (partidas >= 2) {
             alert("Time 1 ganhou o jogo")
             window.location.href = "Marcador-Mineiro"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
             window.location.href = "Marcador-Mineiro"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
     }
 
@@ -72,10 +92,18 @@ export default function MarcadorP() {
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
             window.location.href = "Marcador-Mineiro"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
         if (partidas >= 2) {
             alert("Time 1 ganhou o jogo")
             window.location.href = "Marcador-Mineiro"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
     }
 
@@ -85,23 +113,35 @@ export default function MarcadorP() {
         )
         if (localStorage.getItem("truco")) {
             localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContador(
                 contador + 4
             )
         }
         if (localStorage.getItem("seis")) {
             localStorage.removeItem("seis")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContador(
-                contador + 8
+                contador + 6
             )
         }
         if (localStorage.getItem("nove")) {
             localStorage.removeItem("nove")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("doze")
             setContador(
                 contador + 10
             )
         } if (localStorage.getItem("doze")) {
             localStorage.removeItem("doze")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
             setContador(
                 contador + 12
             )
@@ -126,22 +166,34 @@ export default function MarcadorP() {
         )
         if (localStorage.getItem("truco")) {
             localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContadorTime2(
                 contadorTime2 + 4
             )
         }
         if (localStorage.getItem("seis")) {
+            localStorage.removeItem("truco")
             localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContadorTime2(
-                contadorTime2 + 8
+                contadorTime2 + 6
             )
         }
         if (localStorage.getItem("nove")) {
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
             localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContadorTime2(
                 contadorTime2 + 10
             )
         } if (localStorage.getItem("doze")) {
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
             localStorage.removeItem("doze")
             setContadorTime2(
                 contadorTime2 + 12
@@ -173,10 +225,18 @@ export default function MarcadorP() {
 
     function toMain() {
         window.location.href = "/"
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
     }
 
     function tMineiro() {
         window.location.href = "Mineiro"
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
     }
 
     return (
@@ -189,7 +249,7 @@ export default function MarcadorP() {
                             <h2>
                                 Time 1
                                 <br />
-                                Seus pontos: {contador}
+                                Nós: {contador}
                                 <br />
                                 Partidas ganhas: {partidas}
                             </h2>
@@ -202,7 +262,7 @@ export default function MarcadorP() {
                             </section>
                             <br />
                             <section>
-                                <button className="btn-MarcadorM"  onClick={onNove}>Nove</button>
+                                <button className="btn-MarcadorM"  onClick={onNove}>Dez</button>
                                 <button className="btn-MarcadorM"  onClick={onDoze}>Doze</button>
                             </section>
                             <br />
@@ -210,7 +270,7 @@ export default function MarcadorP() {
                             <h2>
                                 Time 2
                                 <br />
-                                Seus pontos: {contadorTime2}
+                                Eles: {contadorTime2}
                                 <br />
                                 Partidas ganhas: {partidasTime2}
                             </h2>

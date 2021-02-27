@@ -39,21 +39,33 @@ export default function MarcadorP() {
 
     function onTruco() {
         localStorage.setItem("truco", truco)
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
         alert('A partida esta valendo 3 tentos')
     }
 
     function onSeis() {
         localStorage.setItem("seis", seis)
+        localStorage.removeItem("truco")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
         alert('A partida esta valendo 6 tentos')
     }
 
     function onNove() {
         localStorage.setItem("nove", nove)
+        localStorage.removeItem("seis")
+        localStorage.removeItem("truco")
+        localStorage.removeItem("doze")
         alert('A partida esta valendo 9 tentos')
     }
 
     function onDoze() {
         localStorage.setItem("doze", doze)
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("truco")
         alert('A partida esta valendo 12 tentos')
     }
 
@@ -61,10 +73,18 @@ export default function MarcadorP() {
         if (partidas >= 2) {
             alert("Time 1 ganhou o jogo")
             window.location.href = "Marcador-Paulista"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
             window.location.href = "Marcador-Paulista"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
     }
 
@@ -72,36 +92,60 @@ export default function MarcadorP() {
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
             window.location.href = "Marcador-Paulista"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
         if (partidas >= 2) {
             alert("Time 1 ganhou o jogo")
             window.location.href = "Marcador-Paulista"
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
         }
     }
 
     function juntaTentos() {
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
         setContador(
             contador + 1
         )
         if (localStorage.getItem("truco")) {
             localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContador(
                 contador + 3
             )
         }
         if (localStorage.getItem("seis")) {
             localStorage.removeItem("seis")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContador(
                 contador + 6
             )
         }
         if (localStorage.getItem("nove")) {
             localStorage.removeItem("nove")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("doze")
             setContador(
                 contador + 9
             )
         } if (localStorage.getItem("doze")) {
             localStorage.removeItem("doze")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
             setContador(
                 contador + 12
             )
@@ -126,28 +170,44 @@ export default function MarcadorP() {
         )
         if (localStorage.getItem("truco")) {
             localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContadorTime2(
                 contadorTime2 + 3
             )
         }
         if (localStorage.getItem("seis")) {
             localStorage.removeItem("seis")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setContadorTime2(
                 contadorTime2 + 6
             )
         }
         if (localStorage.getItem("nove")) {
             localStorage.removeItem("nove")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("doze")
             setContadorTime2(
                 contadorTime2 + 9
             )
         } if (localStorage.getItem("doze")) {
             localStorage.removeItem("doze")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
             setContadorTime2(
                 contadorTime2 + 12
             )
         }
         if (contadorTime2 >= 12) {
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
+            localStorage.removeItem("doze")
             setPartidasTime2(
                 partidasTime2 + 1
             )
@@ -173,10 +233,18 @@ export default function MarcadorP() {
 
     function toMain() {
         window.location.href = "/"
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
     }
 
     function tPaulista() {
         window.location.href = "Paulista"
+        localStorage.removeItem("truco")
+        localStorage.removeItem("seis")
+        localStorage.removeItem("nove")
+        localStorage.removeItem("doze")
     }
 
     return (
@@ -189,7 +257,7 @@ export default function MarcadorP() {
                             <h2>
                                 Time 1
                                 <br />
-                                Seus pontos: {contador}
+                                Nós: {contador}
                                 <br />
                                 Partidas ganhas: {partidas}
                             </h2>
@@ -210,7 +278,7 @@ export default function MarcadorP() {
                             <h2>
                                 Time 2
                                 <br />
-                                Seus pontos: {contadorTime2}
+                                Eles: {contadorTime2}
                                 <br />
                                 Partidas ganhas: {partidasTime2}
                             </h2>

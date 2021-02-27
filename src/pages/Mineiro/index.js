@@ -90,26 +90,26 @@ export default function Mineiro() {
                                 <hr />
                 Mandar cair: a mão passa a valer 4 tentos.
                 <br />
-                Pedir 6: a mão passa a valer 8 tentos.
+                Pedir 6: a mão passa a valer 6 tentos.
                 <br />
                 Fugir: a dupla que trucou leva 2 tento.
                 <br />
                                 <hr />
                                 <h4 > Caso a dupla 'B' pedir 6 a dupla 'A' pode: </h4>
                                 <hr />
-                Mandar cair: a mão passa a valer 8 tentos.
+                Mandar cair: a mão passa a valer 6 tentos.
                 <br />
-                Pedir 9: a mão passa a valer 10 tentos.
+                Pedir 10: a mão passa a valer 10 tentos.
                 <br />
                 Fugir: a dupla que chamou 6 leva 4 tentos.
                 <hr />
-                                <h4>Caso a dupla 'A' peça nove : </h4>
+                                <h4>Caso a dupla 'A' peça dez : </h4>
                                 <hr />
                 Mandar cair: a mão passa a valer 10 tentos.
                 <br />
                 Pedir 12: a mão passa a valer o jogo quem ganhar ganha tudo.
                 <br />
-                Fugir: a dupla que chamou nove leva 8 tentos.
+                Fugir: a dupla que chamou dez leva 10 tentos.
                 <br />
                                 <hr />
                                 <h4>Se a dupla 'B' chamar 12 a dupla 'A' pode: </h4>
