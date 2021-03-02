@@ -90,6 +90,11 @@ export default function MarcadorP() {
 
     const [message, setMessage] = useState()
 
+    localStorage.removeItem("truco")
+    localStorage.removeItem("seis")
+    localStorage.removeItem("nove")
+    localStorage.removeItem("doze")
+
     function onClick(e) {
         setMessage(
             e.target.value
@@ -215,7 +220,7 @@ export default function MarcadorP() {
             setContadorTime2(
                 contadorTime2 - contadorTime2
             )
-            alert("Time 1 ganhou uma partida")
+            alert(`Time 1 ganhou uma partida com o placar de ${contador} a ${contadorTime2}`)
         }
     }
 
@@ -268,7 +273,7 @@ export default function MarcadorP() {
             setContadorTime2(
                 contadorTime2 - contadorTime2
             )
-            alert("Time 2 ganhou uma partida")
+            alert(`Time 2 ganhou uma partida com o placar de ${contadorTime2} a ${contador}`)
         }
     }
 
