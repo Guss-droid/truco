@@ -81,10 +81,6 @@ export default function MarcadorP() {
         {
             Sete: 'Cara feia',
             id: 11
-        },
-        {
-            Nenhum: '...',
-            id: 12
         }
     ]
 
@@ -290,7 +286,7 @@ export default function MarcadorP() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div className="App">
+                        <div className="App-Marcar">
                             <h2>
                                 Time 1
                                 </h2>
@@ -326,8 +322,9 @@ export default function MarcadorP() {
                             <button className="btn-Add-Min" onClick={adicionaPontos}>Adicionar pontos</button>
                             <hr />
                             <h2>Sinais</h2>
-                            <select onChange={onClick}>
-                                <option id="0" value={sinais[11].Nenhum}>Selecione um sinal</option>
+                            <select className="sel-box" onChange={onClick}>
+                                <option id="0">Selecione um sinal</option>
+                                <option id="12" value=""></option>
                                 <option id="1" value={sinais[0].Zap}>Zap</option>
                                 <option id="2" value={sinais[1].Copas}>Copas</option>
                                 <option id="3" value={sinais[2].Espada}>Espada</option>

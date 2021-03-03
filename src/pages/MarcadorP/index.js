@@ -294,7 +294,7 @@ export default function MarcadorP() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div className="App">
+                        <div className="App-Marca">
                             <h2>
                                 Time 1
                                 </h2>
@@ -330,8 +330,9 @@ export default function MarcadorP() {
                             <button className="btn-Add-Pts" onClick={adicionaPontos}>Adicionar pontos</button>
                             <hr />
                             <h2>Sinais</h2>
-                            <select onChange={onClick}>
-                                <option id="0" value="o" >Selecione um sinal</option>
+                            <select className="sel-box" onChange={onClick}>
+                                <option id="0">Selecione um sinal</option>
+                                <option id="12" value=""></option>
                                 <option id="1" value={sinais[0].Zap}>Zap</option>
                                 <option id="2" value={sinais[1].Copas}>Copas</option>
                                 <option id="3" value={sinais[2].Espada}>Espada</option>
@@ -347,7 +348,7 @@ export default function MarcadorP() {
                             <div>
                                 {message && (
                                     <div>
-                                        <h3>{message}</h3>
+                                        <h1>{message}</h1>
                                     </div>
                                 )}
                             </div>
