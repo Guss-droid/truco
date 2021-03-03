@@ -148,25 +148,6 @@ export default function MarcadorP() {
         }
     }
 
-    function partidasVitoriosas() {
-        if (partidasTime2 >= 2) {
-            alert("Time 2 ganhou o jogo")
-            window.location.href = "Marcador-Paulista"
-            localStorage.removeItem("truco")
-            localStorage.removeItem("seis")
-            localStorage.removeItem("nove")
-            localStorage.removeItem("doze")
-        }
-        if (partidas >= 2) {
-            alert("Time 1 ganhou o jogo")
-            window.location.href = "Marcador-Paulista"
-            localStorage.removeItem("truco")
-            localStorage.removeItem("seis")
-            localStorage.removeItem("nove")
-            localStorage.removeItem("doze")
-        }
-    }
-
     function juntaTentos() {
         setContador(
             contador + 1
@@ -207,6 +188,10 @@ export default function MarcadorP() {
             )
         }
         if (contador >= 12) {
+            localStorage.removeItem("doze")
+            localStorage.removeItem("truco")
+            localStorage.removeItem("seis")
+            localStorage.removeItem("nove")
             setPartidas(
                 partidas + 1
             )
@@ -284,7 +269,7 @@ export default function MarcadorP() {
 
     function adicionaPontos() {
         juntaTentosTime2()
-        partidasVitoriosas()
+        partidasGanhas()
     }
 
     function toMain() {

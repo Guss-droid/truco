@@ -135,7 +135,7 @@ export default function MarcadorP() {
 
     function partidasGanhas() {
         if (partidas >= 2) {
-            alert("Time 1 ganhou o jogo")
+            alert("Time 1 ganhou o jogo com")
             window.location.href = "Marcador-Mineiro"
             localStorage.removeItem("truco")
             localStorage.removeItem("seis")
@@ -144,25 +144,6 @@ export default function MarcadorP() {
         }
         if (partidasTime2 >= 2) {
             alert("Time 2 ganhou o jogo")
-            window.location.href = "Marcador-Mineiro"
-            localStorage.removeItem("truco")
-            localStorage.removeItem("seis")
-            localStorage.removeItem("nove")
-            localStorage.removeItem("doze")
-        }
-    }
-
-    function partidasVitoriosas() {
-        if (partidasTime2 >= 2) {
-            alert("Time 2 ganhou o jogo")
-            window.location.href = "Marcador-Mineiro"
-            localStorage.removeItem("truco")
-            localStorage.removeItem("seis")
-            localStorage.removeItem("nove")
-            localStorage.removeItem("doze")
-        }
-        if (partidas >= 2) {
-            alert("Time 1 ganhou o jogo")
             window.location.href = "Marcador-Mineiro"
             localStorage.removeItem("truco")
             localStorage.removeItem("seis")
@@ -284,7 +265,7 @@ export default function MarcadorP() {
 
     function adicionaPontos() {
         juntaTentosTime2()
-        partidasVitoriosas()
+        partidasGanhas()
     }
 
     function toMain() {
