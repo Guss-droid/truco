@@ -131,7 +131,7 @@ export default function MarcadorP() {
 
     function partidasGanhas() {
         if (partidas >= 2) {
-            alert("Time 1 ganhou o jogo")
+            alert("Nós ganhou o jogo")
             window.location.href = "Marcador-Paulista"
             localStorage.removeItem("truco")
             localStorage.removeItem("seis")
@@ -139,7 +139,7 @@ export default function MarcadorP() {
             localStorage.removeItem("doze")
         }
         if (partidasTime2 >= 2) {
-            alert("Time 2 ganhou o jogo")
+            alert("Eles ganhou o jogo")
             window.location.href = "Marcador-Paulista"
             localStorage.removeItem("truco")
             localStorage.removeItem("seis")
@@ -201,7 +201,7 @@ export default function MarcadorP() {
             setContadorTime2(
                 contadorTime2 - contadorTime2
             )
-            alert(`Time 1 ganhou uma partida com o placar de ${contador} a ${contadorTime2}`)
+            alert(`Nós ganhou uma partida com o placar de ${contador} a ${contadorTime2}`)
         }
     }
 
@@ -258,7 +258,7 @@ export default function MarcadorP() {
             setContadorTime2(
                 contadorTime2 - contadorTime2
             )
-            alert(`Time 2 ganhou uma partida com o placar de ${contadorTime2} a ${contador}`)
+            alert(`Eles ganhou uma partida com o placar de ${contadorTime2} a ${contador}`)
         }
     }
 
@@ -296,7 +296,7 @@ export default function MarcadorP() {
                     <Title>
                         <div className="App-Marca">
                             <h2>
-                                Time 1
+                             Nós
                                 </h2>
                             <hr />
                             <h1>
@@ -319,7 +319,7 @@ export default function MarcadorP() {
                             <br />
                             <hr />
                             <h2>
-                                Time 2
+                              Eles
                                 </h2>
                             <hr />
                             <h1>
