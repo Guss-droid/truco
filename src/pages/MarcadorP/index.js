@@ -37,52 +37,52 @@ export default function MarcadorP() {
 
     const [partidasTime2, setPartidasTime2] = useState(0)
 
-    const sinais = [
-        {
-            Zap: 'Pisque o olho',
-            id: 1
-        },
-        {
-            Copas: 'Levante a sobrancelha',
-            id: 2
-        },
-        {
-            Espada: 'Movimente a bochecha',
-            id: 3
-        },
-        {
-            Ouros: 'Mostre a lingua',
-            id: 4
-        },
-        {
-            Tres: 'Movimente o ombro',
-            id: 5
-        },
-        {
-            Dois: 'Vire a cabeça',
-            id: 6
-        },
-        {
-            Áz: 'Levante o mindinho',
-            id: 7
-        },
-        {
-            Reis: 'Passe a mão no queixo',
-            id: 8
-        },
-        {
-            Valete: 'Um jota com a mão',
-            id: 9
-        },
-        {
-            Dama: 'Mão no peito',
-            id: 10
-        },
-        {
-            Sete: 'Cara feia',
-            id: 11
-        }
-    ]
+    // const sinais = [
+    //     {
+    //         Zap: 'Pisque o olho',
+    //         id: 1
+    //     },
+    //     {
+    //         Copas: 'Levante a sobrancelha',
+    //         id: 2
+    //     },
+    //     {
+    //         Espada: 'Movimente a bochecha',
+    //         id: 3
+    //     },
+    //     {
+    //         Ouros: 'Mostre a lingua',
+    //         id: 4
+    //     },
+    //     {
+    //         Tres: 'Movimente o ombro',
+    //         id: 5
+    //     },
+    //     {
+    //         Dois: 'Vire a cabeça',
+    //         id: 6
+    //     },
+    //     {
+    //         Áz: 'Levante o mindinho',
+    //         id: 7
+    //     },
+    //     {
+    //         Reis: 'Passe a mão no queixo',
+    //         id: 8
+    //     },
+    //     {
+    //         Valete: 'Um jota com a mão',
+    //         id: 9
+    //     },
+    //     {
+    //         Dama: 'Mão no peito',
+    //         id: 10
+    //     },
+    //     {
+    //         Sete: 'Cara feia',
+    //         id: 11
+    //     }
+    // ]
 
     const [message, setMessage] = useState()
 
@@ -332,18 +332,17 @@ export default function MarcadorP() {
                             <h2>Sinais</h2>
                             <select className="sel-box" onChange={onClick}>
                                 <option id="0">Selecione um sinal</option>
-                                <option id="12" value=""></option>
-                                <option id="1" value={sinais[0].Zap}>Zap</option>
-                                <option id="2" value={sinais[1].Copas}>Copas</option>
-                                <option id="3" value={sinais[2].Espada}>Espada</option>
-                                <option id="4" value={sinais[3].Ouros}>Ouros</option>
-                                <option id="5" value={sinais[4].Tres}>Três</option>
-                                <option id="6" value={sinais[5].Dois}>Dois</option>
-                                <option id="7" value={sinais[6].Áz}>Áz</option>
-                                <option id="8" value={sinais[7].Reis}>Reis</option>
-                                <option id="9" value={sinais[8].Valete}>Valete</option>
-                                <option id="10" value={sinais[9].Dama}>Dama</option>
-                                <option id="11" value={sinais[10].Sete}>Do sete para baixo</option>
+                                <option id="1" value="">Zap //Pisque o olho</option>
+                                <option id="2" value="">Copas //Levante a sobrancelha</option>
+                                <option id="3" value="">Espada //Movimente a bochecha</option>
+                                <option id="4" value="">Ouros //Mostre a lingua</option>
+                                <option id="5" value="">Três //Movimente o ombro</option>
+                                <option id="6" value="">Dois //Vire a cabeça</option>
+                                <option id="7" value="">Áz //Levante o mindinho</option>
+                                <option id="8" value="">Reis //Passe a mão no queixo</option>
+                                <option id="9" value="">Valete //Um jota com a mão</option>
+                                <option id="10" value="">Dama //Mão no peito</option>
+                                <option id="11" value="">Do sete para baixo //Cara feia</option>
                             </select>
                             <div>
                                 {message && (
