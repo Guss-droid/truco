@@ -1,0 +1,31 @@
+  .btn-IrTruco {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #ffb351;
+    border-radius: 6px;
+    color: #ff0000;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+  .btn-IrTruco:hover {
+    background-color: #63d9fa;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+  }
+
+  .btn-IrCalculos {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    border-radius: 6px;
+    color: #61dafb;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+  .btn-IrCalculos:hover {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+    cursor: pointer;
+  }

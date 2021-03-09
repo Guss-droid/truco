@@ -5,7 +5,7 @@ import GlobalTheme from '../../Temas/globals';
 import '../Layouts/hist.css';
 
 export default function Main() {
- 
+
     const [theme, setTheme] = useState('light')
 
     const trocaTema = () => {
@@ -52,6 +52,10 @@ export default function Main() {
 
     function marcadorMinPts() {
         window.location.href = "/Marcador-Mineiro"
+    }
+
+    function main() {
+        window.location.href = "/"
     }
 
     return (
@@ -120,6 +124,9 @@ export default function Main() {
                                     Marcador
                               <br /> Mineiro
                                </button>
+                            </section>
+                            <section>
+                                <button onClick={main}>Ir para a seção</button>
                             </section>
                         </div>
                     </Title>

@@ -265,7 +265,7 @@ export default function MarcadorP() {
     }
 
     function toMain() {
-        window.location.href = "/"
+        window.location.href = "/Historia"
         localStorage.removeItem("truco")
         localStorage.removeItem("seis")
         localStorage.removeItem("nove")

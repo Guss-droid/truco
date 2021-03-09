@@ -43,7 +43,7 @@ export default function Paulista () {
     }
 
     function toMain() {
-        window.location.href = "/"
+        window.location.href = "/Historia"
     }
 
     return (
