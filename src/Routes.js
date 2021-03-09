@@ -13,8 +13,8 @@ export default function Routes(){
   return(
       <BrowserRouter>
       <Switch>
-        <Route path="/Calculo" component={Calculadora} />
         <Route exact path="/" component={Initial} />
+        <Route path="/Calculo" component={Calculadora} />
         <Route path="/Historia" component={Main} />
         <Route path="/Paulista" component={Paulista} />
         <Route path="/Mineiro" component={Mineiro} />
