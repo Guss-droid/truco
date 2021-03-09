@@ -21,13 +21,13 @@ export default function Calculadora() {
   `;
 
 
-    const [a, setA] = useState(0)
+    // const [a, setA] = useState(0)
 
-    const [b, setB] = useState(0)
+    // const [b, setB] = useState(0)
 
-    const [c, setC] = useState(0)
+    // const [c, setC] = useState(0)
 
-    const [message, setMessage] = useState()
+    // const [message, setMessage] = useState()
 
     return (
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -37,14 +37,7 @@ export default function Calculadora() {
                     <Title>
                         <div>
                            <button >Calcular</button>
-                           <div>
-                                {message && (
-                                    <div>
-                                        <h2>{message}</h2>
-                                    </div>
-                                )}
                             </div>
-                        </div>
                     </Title>
                 </Container>
             </Fragment>
