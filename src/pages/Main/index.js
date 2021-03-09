@@ -115,7 +115,7 @@ export default function Main() {
                                  <br />Paulista
                                 </button>
                             </section>
-                            <section className="Truco-body">
+                            {/* <section className="Truco-body">
                                 <button className="btn-TrucoM" onClick={tMineiro}>
                                     Truco <br />
                                     Mineiro
@@ -124,7 +124,7 @@ export default function Main() {
                                     Marcador
                               <br /> Mineiro
                                </button>
-                            </section>
+                            </section> */}
                             <section>
                                 <button onClick={main}>Ir para a seção</button>
                             </section>
