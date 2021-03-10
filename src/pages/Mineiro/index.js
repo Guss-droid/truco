@@ -123,7 +123,7 @@ export default function Mineiro() {
                                 <button className="btn-ToMain2" onClick={marcadorPts}>Marcador</button>
                             </section>
                             <section>
-                                <button className="btn-ToMain2" onClick={toMain}>Voltar para a página principal</button>
+                                <button className="btn-ToMain2" onClick={toMain}>Voltar para a página de historia</button>
                             </section>
                         </div>
                     </Title>

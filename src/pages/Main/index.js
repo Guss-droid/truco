@@ -54,9 +54,9 @@ export default function Main() {
         window.location.href = "/Marcador-Mineiro"
     }
 
-    // function main() {
-    //     window.location.href = "/"
-    // }
+     function main() {
+         window.location.href = "/"
+     }
 
     return (
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -125,9 +125,9 @@ export default function Main() {
                               <br /> Mineiro
                                </button>
                             </section>
-                            {/* <section>
-                                <button onClick={main}>Ir para a seção</button>
-                            </section> */}
+                            <section>
+                                <button className="btn-ToInicial" onClick={main}>Ir para a pagina inicial</button>
+                            </section>
                         </div>
                     </Title>
                 </Container>

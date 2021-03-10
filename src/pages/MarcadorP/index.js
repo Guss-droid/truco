@@ -354,7 +354,7 @@ export default function MarcadorP() {
                             <hr />
                             <br />
                             <section>
-                                <button className="btn-ToMain1" onClick={toMain}>Voltar para a página inicial</button>
+                                <button className="btn-ToMain1" onClick={toMain}>Voltar para a página de historia</button>
                             </section>
                             <br />
                             <section>
