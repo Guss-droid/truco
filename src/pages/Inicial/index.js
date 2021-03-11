@@ -43,7 +43,7 @@ export default function Initial() {
   `;
 
     function toContas() {
-        window.location.href = "/"
+        window.location.href = "/Calculo"
     }
 
     function toTruco() {

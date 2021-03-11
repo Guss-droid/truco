@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
+import '../Layouts/Calc.css'
 
 export default function Calculadora() {
 
@@ -20,53 +21,61 @@ export default function Calculadora() {
     font-size: 14px;
   `;
 
-
-    const [a, setA] = useState()
-
-    const [b, setB] = useState()
-
-    const [c, setC] = useState()
-
-    const [x, setX] = useState()
-
-    const [delta, setDelta] = useState()
-
     const [message, setMessage] = useState()
 
-    function onChange(e){
-        setB({
-            ...b,
-            [e.target.id]: e.target.value
-        })
+    const [message1, setMessage1] = useState()
+
+    const [valorA, setVariaveis] = useState(0)
+
+    const [valorB, setVariavelB] = useState(0)
+
+    const [valorC, setVariavelC] = useState(0)
+
+    function onChange(e) {
+        setVariaveis(
+            e.target.value
+        )
     }
 
-    function onChange1(e){
-        setA({
-            ...a,
-            [e.target.id]: e.target.value
-        })
+    function onChange1(e) {
+        setVariavelB(
+            e.target.value
+        )
     }
 
-    function onChange2(e){
-        setC({
-            ...a,
-            [e.target.id] : e.target.value
-        })
+    function onChange2(e) {
+        setVariavelC(
+            e.target.value
+        )
+    }
+
+    function irInicio() {
+        window.location.href = "/"
     }
 
     function Calcular() {
-        setDelta(
-            (b * b) - 4 * a * c
+        setVariaveis(
+            valorA,
+            valorB,
+            valorC
         )
+        var coeficiente1;
+        var coeficiente2;
+
+        var delta = (valorB * valorB) - 4 * valorA * valorC;
+
         if (delta < 0) {
-            setMessage("Delta não possui resultado real")
-        }
-        if (delta === 0) {
-            setMessage("Delta possui apenas um resultado ou 2 iguais")
-        } if (delta > 0) {
-            setX(
-                -b + Math.sqrt(delta) / (2 * a)
-            )
+            setMessage("Para Delta negativo, não existem raízes reais.");
+            setMessage1("Para Delta negativo, não existem raízes reais.");
+        } else {
+
+            setMessage("Para Delta positivo, raízes diferentes: ");
+
+            coeficiente1 = (-valorB + Math.sqrt(delta)) / (2 * valorA);
+            coeficiente2 = (-valorB - Math.sqrt(delta)) / (2 * valorA);
+
+            setMessage("x¹ = " + coeficiente1);
+            setMessage1("x² = " + coeficiente2);
         }
     }
 
@@ -76,23 +85,33 @@ export default function Calculadora() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div>
-                            <input type="text" onChange={onChange1} id="a" placeholder="coloque um valor..." value={a} />
-                            <input type="text" onChange={onChange} id="b" placeholder="coloque um valor..." value={b} />
-                            <input type="text" onChange={onChange2} id="c" placeholder="coloque um valor..." value={c} />
-                            <button onClick={Calcular} >Calcular</button>
-                            <div>
-                                Delta :{delta}
-                                <br />
-                               Resultados {x}
-                            </div>
+                        <div className="App-form">
+                            <h2>Fórmula de Bhaskara</h2>
+                            <hr />
+                            <br />
+                            <label>Valor de A:</label>
+                            <input type="text" onChange={(e) => onChange(e)} value={valorA} placeholder="Coloque um valor..." />
+                            <br />
+                            <label>Valor de B:</label>
+                            <input type="text" onChange={onChange1} value={valorB} placeholder="Coloque um valor..." />
+                            <br />
+                            <label>Valor de C:</label>
+                            <input type="text" onChange={onChange2} value={valorC} placeholder="Coloque um valor..." />
+                            <br />
+                            <br />
+                            <button className="btn-Calcular" onClick={Calcular} >Calcular</button>
                             <div>
                                 {message && (
                                     <div>
-                                        <h3>{message}</h3>
+                                        <h4>{message}
+                                            <br />
+                                            {message1}</h4>
                                     </div>
                                 )}
                             </div>
+                            <br />
+                            <hr />
+                            <button className="btn-ToInicio" onClick={irInicio}>Ir para a pagina inicial</button>
                         </div>
                     </Title>
                 </Container>

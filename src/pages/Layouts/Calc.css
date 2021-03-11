@@ -1,0 +1,39 @@
+ .App-form{
+     font-family: monospace;
+ }
+
+ .btn-Calcular{
+    font-family:monospace;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #00617c;
+    border-radius: 6px;
+    color: #1aa9d1;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+ }
+
+ .btn-Calcular:hover{
+    cursor: pointer;
+    background-color: #00d9ff;
+    color: #000000;
+ }
+
+ .btn-ToInicio{
+    font-family:monospace;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #00617c;
+    border-radius: 6px;
+    color: #00e1ff;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+ }
+
+ .btn-ToInicio:hover{
+    cursor: pointer;
+    background-color: #00d9ff;
+    color: #000000;
+ }

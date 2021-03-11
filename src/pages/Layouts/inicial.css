@@ -25,7 +25,7 @@
     transition: ease-in 0.3s;
   }
   .btn-IrCalculos:hover {
-    background-color: #000000;
+    background-color: #50a4aa;
     color: rgb(0, 238, 255);
     cursor: pointer;
   }
