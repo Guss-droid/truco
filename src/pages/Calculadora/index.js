@@ -64,9 +64,8 @@ export default function Calculadora() {
 
         var delta = (valorB * valorB) - 4 * valorA * valorC;
 
-        if (delta < 0) {
+        if (delta <= 0) {
             setMessage("Para Delta negativo, não existem raízes reais.");
-            setMessage1("Para Delta negativo, não existem raízes reais.");
         } else {
 
             setMessage("Para Delta positivo, raízes diferentes: ");
@@ -74,8 +73,8 @@ export default function Calculadora() {
             coeficiente1 = (-valorB + Math.sqrt(delta)) / (2 * valorA);
             coeficiente2 = (-valorB - Math.sqrt(delta)) / (2 * valorA);
 
-            setMessage("x¹ = " + coeficiente1);
-            setMessage1("x² = " + coeficiente2);
+            setMessage1("x¹ = " + coeficiente1);
+            setMessage("x² = " + coeficiente2);
         }
     }
 
@@ -90,22 +89,22 @@ export default function Calculadora() {
                             <hr />
                             <br />
                             <label>Valor de A:</label>
-                            <input type="text" onChange={(e) => onChange(e)} value={valorA} placeholder="Coloque um valor..." />
+                            <input type="number" onChange={(e) => onChange(e)} value={valorA} placeholder="Coloque um valor..." />
                             <br />
                             <label>Valor de B:</label>
-                            <input type="text" onChange={onChange1} value={valorB} placeholder="Coloque um valor..." />
+                            <input type="number" onChange={onChange1} value={valorB} placeholder="Coloque um valor..." />
                             <br />
                             <label>Valor de C:</label>
-                            <input type="text" onChange={onChange2} value={valorC} placeholder="Coloque um valor..." />
+                            <input type="number" onChange={onChange2} value={valorC} placeholder="Coloque um valor..." />
                             <br />
                             <br />
                             <button className="btn-Calcular" onClick={Calcular} >Calcular</button>
                             <div>
                                 {message && (
                                     <div>
-                                        <h4>{message}
+                                        <h4>{message1}
                                             <br />
-                                            {message1}</h4>
+                                            {message}</h4>
                                     </div>
                                 )}
                             </div>
