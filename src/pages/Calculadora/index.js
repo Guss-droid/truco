@@ -4,6 +4,15 @@ import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
 import '../Layouts/Calc.css'
 
+const Container = styled.div`
+align-items: center;
+`;
+
+const Title = styled.p`
+font-size: 14px;
+`;
+
+
 export default function Calculadora() {
 
     const [theme, setTheme] = useState('light')
@@ -12,14 +21,6 @@ export default function Calculadora() {
         const localTheme = localStorage.getItem("theme");
         localTheme && setTheme(localTheme)
     }, [])
-
-    const Container = styled.div`
-    align-items: center;
-  `;
-
-    const Title = styled.p`
-    font-size: 14px;
-  `;
 
     const [message, setMessage] = useState()
 
@@ -89,13 +90,16 @@ export default function Calculadora() {
                             <hr />
                             <br />
                             <label>Valor de A:</label>
-                            <input type="number" onChange={(e) => onChange(e)} value={valorA} placeholder="Coloque um valor..." />
+                            <input type="number" onChange={onChange} value={valorA} placeholder="Coloque um valor..."
+                             />
                             <br />
                             <label>Valor de B:</label>
-                            <input type="number" onChange={onChange1} value={valorB} placeholder="Coloque um valor..." />
+                            <input type="number" onChange={onChange1} value={valorB} placeholder="Coloque um valor..." 
+                            />
                             <br />
                             <label>Valor de C:</label>
-                            <input type="number" onChange={onChange2} value={valorC} placeholder="Coloque um valor..." />
+                            <input type="number" onChange={onChange2} value={valorC} placeholder="Coloque um valor..."
+                             />
                             <br />
                             <br />
                             <button className="btn-Calcular" onClick={Calcular} >Calcular</button>
