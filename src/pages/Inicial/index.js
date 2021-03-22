@@ -8,6 +8,21 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import '../Layouts/inicial.css'
 library.add(fas)
 
+const Container = styled.div`
+align-items: center;
+`;
+
+const Title = styled.p`
+font-size: 14px;
+`;
+
+const ButtonChange = styled.button`
+width: 100px;
+height: 40px;
+margin-right: 20px;
+border-radius: 10px;
+`;
+
 export default function Initial() {
 
     const [theme, setTheme] = useState('light')
@@ -27,20 +42,6 @@ export default function Initial() {
         localTheme && setTheme(localTheme)
     }, [])
 
-    const Container = styled.div`
-    align-items: center;
-  `;
-
-    const Title = styled.p`
-    font-size: 14px;
-  `;
-
-    const ButtonChange = styled.button`
-    width: 100px;
-    height: 40px;
-    margin-right: 20px;
-    border-radius: 10px;
-  `;
 
     function toContas() {
         window.location.href = "/Calculo"
@@ -48,6 +49,10 @@ export default function Initial() {
 
     function toTruco() {
         window.location.href = "/Historia"
+    }
+
+    function toMedia() {
+        window.location.href = "/Media"
     }
 
     return (
@@ -75,6 +80,15 @@ export default function Initial() {
                                 <hr />
                                 <button className="btn-IrCalculos" onClick={toContas}>
                                     <FontAwesomeIcon icon="square-root-alt" />
+                                </button>
+                            </section>
+                            <br />
+                            <hr />
+                            <section>
+                                <h2>Calcular a média</h2>
+                                <hr />
+                                <button className="btn-IrMedia" onClick={toMedia}>
+                                <FontAwesomeIcon icon="calculator" />
                                 </button>
                             </section>
                         </div>
