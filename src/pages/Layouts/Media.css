@@ -1,0 +1,50 @@
+ .btn-ToVolt {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #46f0b7;
+    border-radius: 6px;
+    color: #30ffa9;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-ToVolt:hover {
+    background-color: #46ffb2;
+    color: rgb(17, 109, 74);
+    cursor: pointer;
+  }
+
+  .btn-ToCalc {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #48fdc7;
+    border-radius: 6px;
+    color: #37ffc3;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-ToCalc:hover {
+    background-color: #3ce2ab;
+    color: rgb(21, 110, 69);
+    cursor: pointer;
+  }
+
+  .btn-ToMedia {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #30ffa9;
+    border-radius: 6px;
+    color: #46ffb2;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-ToMedia:hover {
+    background-color: #46ffb2;
+    color: rgb(13, 121, 79);
+    cursor: pointer;
+  }

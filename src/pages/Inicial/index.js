@@ -78,6 +78,7 @@ export default function Initial() {
                             <section>
                                 <h2>Cálculos</h2>
                                 <hr />
+                                <br />
                                 <button className="btn-IrCalculos" onClick={toContas}>
                                     <FontAwesomeIcon icon="square-root-alt" />
                                 </button>
@@ -87,8 +88,9 @@ export default function Initial() {
                             <section>
                                 <h2>Calcular a média</h2>
                                 <hr />
+                                <br />
                                 <button className="btn-IrMedia" onClick={toMedia}>
-                                <FontAwesomeIcon icon="calculator" />
+                                    <FontAwesomeIcon icon="calculator" />
                                 </button>
                             </section>
                         </div>
