@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
-import '../Layouts/Calc.css'
+import '../Layouts/Calculadora.css';
 
 const Container = styled.div`
 align-items: center;
@@ -12,8 +12,7 @@ const Title = styled.p`
 font-size: 14px;
 `;
 
-
-export default function Calculadora() {
+export default function CalcCalcula() {
 
     const [theme, setTheme] = useState('light')
 
@@ -22,61 +21,84 @@ export default function Calculadora() {
         localTheme && setTheme(localTheme)
     }, [])
 
-    const [message, setMessage] = useState()
+    const [valores, setValores] = useState();
 
-    const [message1, setMessage1] = useState()
+    const [valores1, setValores1] = useState();
 
-    const [valorA, setVariaveis] = useState(0)
+    const [resultado, setResultado] = useState();
 
-    const [valorB, setVariavelB] = useState(0)
+    const [zero,] = useState(0);
 
-    const [valorC, setVariavelC] = useState(0)
+    const [um,] = useState(1);
 
-    function onChange(e) {
-        setVariaveis(
+    const [dois,] = useState(2);
+
+    const [tres,] = useState(3);
+
+    const [quatro,] = useState(4);
+
+    const [cinco,] = useState(5);
+
+    const [seis,] = useState(6);
+
+    const [sete,] = useState(7);
+
+    const [oito,] = useState(8);
+
+    const [nove,] = useState(9);
+
+    //Sinais
+
+    const [sinais, setSinais] = useState();
+
+    const [mais,] = useState('+');
+
+    const [menos,] = useState('-');
+
+    const [multiplicar,] = useState('*');
+
+    const [dividir,] = useState('/');
+
+    function onSinais(e) {
+        setSinais(
             e.target.value
         )
     }
 
-    function onChange1(e) {
-        setVariavelB(
+    function onChange(e) {
+        setValores(
             e.target.value
         )
     }
 
     function onChange2(e) {
-        setVariavelC(
+        setValores1(
             e.target.value
         )
     }
 
-    function irInicio() {
-        window.location.href = "/"
+    function Result() {
+        if (sinais === mais) {
+            setResultado(
+                parseFloat(valores) + parseFloat(valores1)
+            )
+        } if (sinais === menos) {
+            setResultado(
+                parseFloat(valores) - parseFloat(valores1)
+            )
+        } if (sinais === multiplicar) {
+            setResultado(
+                ((valores) * (valores1))
+            )
+        } if (sinais === dividir) {
+            setResultado(
+                parseFloat(valores) / parseFloat(valores1)
+            )
+        }
     }
 
-    function Calcular() {
-        setVariaveis(
-            valorA,
-            valorB,
-            valorC
-        )
-        var coeficiente1;
-        var coeficiente2;
-
-        var delta = (valorB * valorB) - 4 * valorA * valorC;
-
-        if (delta <= 0) {
-            setMessage("Para Delta negativo, não existem raízes reais.");
-        } else {
-
-            setMessage("Para Delta positivo, raízes diferentes: ");
-
-            coeficiente1 = (-valorB + Math.sqrt(delta)) / (2 * valorA);
-            coeficiente2 = (-valorB - Math.sqrt(delta)) / (2 * valorA);
-
-            setMessage1("x¹ = " + coeficiente1);
-            setMessage("x² = " + coeficiente2);
-        }
+    function ToBack(){
+        window.location.href ="/"
     }
 
     return (
@@ -85,40 +107,40 @@ export default function Calculadora() {
                 <GlobalTheme />
                 <Container>
                     <Title>
-                        <div className="App-form">
-                            <h2>Fórmula de Bhaskara</h2>
+                        <div>
+                            <h2>Calculadora</h2>
                             <hr />
                             <br />
-                            <label>Valor de A:</label>
-                            <input type="number" onChange={onChange} value={valorA} placeholder="Coloque um valor..."
-                             />
-                            <br />
-                            <label>Valor de B:</label>
-                            <input type="number" onChange={onChange1} value={valorB} placeholder="Coloque um valor..." 
-                            />
-                            <br />
-                            <label>Valor de C:</label>
-                            <input type="number" onChange={onChange2} value={valorC} placeholder="Coloque um valor..."
-                             />
-                            <br />
-                            <br />
-                            <button className="btn-Calcular" onClick={Calcular} >Calcular</button>
-                            <div>
-                                {message && (
-                                    <div>
-                                        <h4>{message1}
-                                            <br />
-                                            {message}</h4>
-                                    </div>
-                                )}
+                            <div className="alinhar">
+                                <div className="show-Results">{valores} {sinais} {valores1} = {resultado}</div>
                             </div>
+                            <button onClick={onChange} value={um}>1</button>
+                            <button onClick={onChange2} value={dois}>2</button>
+                            <button onClick={onChange} value={tres}>3</button>
+                            <button onClick={onSinais} value={mais}>+</button>
+                            <br />
+                            <button onClick={onChange2} value={quatro}>4</button>
+                            <button onClick={onChange} value={cinco}>5</button>
+                            <button onClick={onChange2} value={seis}>6</button>
+                            <button onClick={onSinais} value={menos}>-</button>
+                            <br />
+                            <button onClick={onChange} value={sete}>7</button>
+                            <button onClick={onChange2} value={oito}>8</button>
+                            <button onClick={onChange} value={nove}>9</button>
+                            <button onClick={onSinais} value={multiplicar}>*</button>
+                            <br />
+                            <button>C</button>
+                            <button onClick={onChange2} value={zero}>0</button>
+                            <button onClick={Result}>=</button>
+                            <button onClick={onSinais} value={dividir}>/</button>
                             <br />
                             <hr />
-                            <button className="btn-ToInicio" onClick={irInicio}>Ir para a pagina inicial</button>
+                            <button onClick={ToBack}>Voltar</button>
                         </div>
                     </Title>
                 </Container>
             </Fragment>
         </ThemeProvider>
+
     )
 }

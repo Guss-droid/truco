@@ -46,3 +46,20 @@
     color: rgb(54, 231, 107);
     cursor: pointer;
   }
+
+  .btn-IrCalc {
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #70bfe4;
+    border-radius: 6px;
+    color: #005186;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+  }
+
+  .btn-IrCalc:hover {
+    background-color: #1fc0ff;
+    color: rgb(2, 72, 112);
+    cursor: pointer;
+  }

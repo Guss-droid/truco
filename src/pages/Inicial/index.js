@@ -55,6 +55,10 @@ export default function Initial() {
         window.location.href = "/Media"
     }
 
+    function ToCalculadora() {
+        window.location.href = "/"
+    }
+
     return (
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
             <Fragment>
@@ -76,7 +80,7 @@ export default function Initial() {
                             <br />
                             <hr />
                             <section>
-                                <h2>Cálculos</h2>
+                                <h2>Formula de Bhaskara</h2>
                                 <hr />
                                 <br />
                                 <button className="btn-IrCalculos" onClick={toContas}>
@@ -90,9 +94,20 @@ export default function Initial() {
                                 <hr />
                                 <br />
                                 <button className="btn-IrMedia" onClick={toMedia}>
+                                    <FontAwesomeIcon icon="pen" />
+                                </button>
+                            </section>
+                            <br />
+                            <hr />
+                            <section>
+                                <h2>Calculadora</h2>
+                                <hr />
+                                <br />
+                                <button className="btn-IrCalc" onClick={ToCalculadora}>
                                     <FontAwesomeIcon icon="calculator" />
                                 </button>
                             </section>
+                            <hr />
                         </div>
                     </Title>
                 </Container>
