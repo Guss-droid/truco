@@ -1,15 +1,37 @@
- .show-Results{
-     width: 25%;
-     text-align: center;
-     border-radius: 25px;
-     background-color: white;
-     color: #000;
-     margin: 20px;
-     padding: 15px 15px 0 15px;
-     padding-top: 20px;
-     padding-bottom: 10px;
+   .btn-DaCalc{
+    font-family:monospace;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #68767a;
+    border-radius: 6px;
+    color: #000000;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+    background-color: rgb(160, 160, 160);
+   }
+
+   .btn-DaCalc:hover{
+    cursor: pointer;
+    background-color: #6d6d6d;
+    color: #000000;
  }
 
- .alinhar{
-     padding-left: 565px;
+ .btn-ToBack{
+    font-family:monospace;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #30a2ee;
+    border-radius: 6px;
+    color: #000000;
+    font-weight: bold;
+    transition: ease-in 0.3s;
+    background-color: rgb(48, 221, 252);
+ }
+
+ .btn-ToBack:hover{
+    cursor: pointer;
+    background-color: #236388;
+    color: #000000;
  }

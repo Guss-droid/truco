@@ -56,7 +56,7 @@ export default function Initial() {
     }
 
     function ToCalculadora() {
-        window.location.href = "/"
+        window.location.href = "/Calculadora"
     }
 
     return (
@@ -71,8 +71,6 @@ export default function Initial() {
                             <hr />
                             <section >
                                 <h2>Truco</h2>
-                                <hr />
-                                <br />
                                 <button className="btn-IrTruco" onClick={toTruco}>
                                     <FontAwesomeIcon icon="heart" />
                                 </button>
@@ -81,8 +79,6 @@ export default function Initial() {
                             <hr />
                             <section>
                                 <h2>Formula de Bhaskara</h2>
-                                <hr />
-                                <br />
                                 <button className="btn-IrCalculos" onClick={toContas}>
                                     <FontAwesomeIcon icon="square-root-alt" />
                                 </button>
@@ -91,8 +87,7 @@ export default function Initial() {
                             <hr />
                             <section>
                                 <h2>Calcular a média</h2>
-                                <hr />
-                                <br />
+
                                 <button className="btn-IrMedia" onClick={toMedia}>
                                     <FontAwesomeIcon icon="pen" />
                                 </button>
@@ -101,8 +96,6 @@ export default function Initial() {
                             <hr />
                             <section>
                                 <h2>Calculadora</h2>
-                                <hr />
-                                <br />
                                 <button className="btn-IrCalc" onClick={ToCalculadora}>
                                     <FontAwesomeIcon icon="calculator" />
                                 </button>

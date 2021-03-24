@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
 import '../Layouts/Calculadora.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 const Container = styled.div`
 align-items: center;
@@ -21,84 +22,117 @@ export default function CalcCalcula() {
         localTheme && setTheme(localTheme)
     }, [])
 
-    const [valores, setValores] = useState();
+    const [valorDigitado, setValorDigitado] = useState('');
 
-    const [valores1, setValores1] = useState();
+    const [valorDisplay, setValorDisplay] = useState('')
 
-    const [resultado, setResultado] = useState();
+    const [calcular, setCalcular] = useState('');
 
-    const [zero,] = useState(0);
+    const [operador, setOperador] = useState('')
 
-    const [um,] = useState(1);
+    const [resultado, setResultado] = useState('0')
 
-    const [dois,] = useState(2);
+    const [igual, setIgual] = useState(false);
 
-    const [tres,] = useState(3);
-
-    const [quatro,] = useState(4);
-
-    const [cinco,] = useState(5);
-
-    const [seis,] = useState(6);
-
-    const [sete,] = useState(7);
-
-    const [oito,] = useState(8);
-
-    const [nove,] = useState(9);
-
-    //Sinais
-
-    const [sinais, setSinais] = useState();
-
-    const [mais,] = useState('+');
-
-    const [menos,] = useState('-');
-
-    const [multiplicar,] = useState('*');
-
-    const [dividir,] = useState('/');
-
-    function onSinais(e) {
-        setSinais(
-            e.target.value
-        )
-    }
+    const [calcAcu, setCalcAcu] = useState('');
 
     function onChange(e) {
-        setValores(
-            e.target.value
-        )
-    }
+        let array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        let opera = '';
+        if (array.indexOf(e.target.id) === -1) {
+            if (e.target.id === "=") {
+                setIgual(true);
+                if (valorDigitado !== "") {
+                    setCalcular(valorDigitado);
+                } else {
+                    setValorDisplay(resultado)
+                }
 
-    function onChange2(e) {
-        setValores1(
-            e.target.value
-        )
-    }
+            } else {
+                if (e.target.id === "ma") {
+                    opera = "+";
+                }
+                if (e.target.id === "v") {
+                    opera = '*';
+                }
+                if (e.target.id === "d") {
+                    opera = '/';
+                }
+                if (e.target.id === "me") {
+                    opera = '-';
+                }
+                setOperador(opera);
+                setIgual(false);
+                if (valorDigitado !== "") {
+                    setCalcular(valorDigitado);
+                    setValorDisplay(`${valorDigitado}${opera}`);
+                    setValorDigitado('')
+                } else {
+                    setValorDisplay(`${resultado}${opera}`);
+                    setValorDigitado(valorDigitado)
+                }
+            }
 
-    function Result() {
-        if (sinais === mais) {
-            setResultado(
-                parseFloat(valores) + parseFloat(valores1)
-            )
-        } if (sinais === menos) {
-            setResultado(
-                parseFloat(valores) - parseFloat(valores1)
-            )
-        } if (sinais === multiplicar) {
-            setResultado(
-                ((valores) * (valores1))
-            )
-        } if (sinais === dividir) {
-            setResultado(
-                parseFloat(valores) / parseFloat(valores1)
-            )
+        } else {
+            setValorDigitado(`${valorDigitado}${e.target.id}`)
+            setValorDisplay(`${valorDigitado}${e.target.id}`)
         }
     }
+    useEffect(() => {
+        console.log(`Disparou Calc:${calcular}`);
+        console.log(`Resultado acumulado:${resultado}`);
+        ExecutaCalc();
 
-    function ToBack(){
-        window.location.href ="/"
+
+    }, [calcular])
+
+    useEffect(() => {
+
+        if (igual) {
+            setValorDisplay(`${resultado}`);
+        } else {
+            setValorDisplay(`${resultado} ${operador}`);
+        }
+    }, [resultado])
+
+
+    function Clear() {
+        setValorDisplay('');
+        setValorDigitado('');
+        setOperador('')
+        setResultado('0');
+        setCalcAcu('')
+    }
+
+    function LimpaParcial() {
+        setValorDigitado('');
+    }
+
+    function ExecutaCalc() {
+        let valorAcumulado = parseFloat(resultado);
+        let valor = calcular;
+        console.log(`Calculando vlr Acumulado:${valorAcumulado} ${operador} ${valor}`);
+        setCalcAcu(`${calcAcu}${valor} ${operador} `)
+        if (operador === "+") {
+            valorAcumulado = valorAcumulado + parseFloat(valor);
+        } else
+            if (operador === "*") {
+                valorAcumulado = valorAcumulado * parseFloat(valor);
+            } else
+                if (operador === "/") {
+                    valorAcumulado = valorAcumulado / parseFloat(valor);
+                }
+        if (operador === "-") {
+            valorAcumulado = valorAcumulado - parseFloat(valor);
+        }
+        LimpaParcial();
+        setResultado(valorAcumulado);
+
+    }
+
+
+    function ToBack() {
+        window.location.href = "/"
     }
 
     return (
@@ -109,38 +143,44 @@ export default function CalcCalcula() {
                     <Title>
                         <div>
                             <h2>Calculadora</h2>
-                            <hr />
-                            <br />
-                            <div className="alinhar">
-                                <div className="show-Results">{valores} {sinais} {valores1} = {resultado}</div>
+                        </div>
+                        <hr />
+                        <br />
+                        <div>
+                            <div className="box">
+                                <input type="text" readOnly value={calcAcu}></input>
+                                <br />
+                                <input type="text" readOnly value={valorDisplay}></input>
+                                <br />
+                                <br />
+                                <button className="btn-DaCalc" id="1" onClick={onChange}>1</button>
+                                <button className="btn-DaCalc" id="2" onClick={onChange}>2</button>
+                                <button className="btn-DaCalc" id="3" onClick={onChange}>3</button>
+                                <button className="btn-DaCalc" id="ma" onClick={onChange}>+</button>
+                                <br />
+                                <button className="btn-DaCalc" id="4" onClick={onChange}>4</button>
+                                <button className="btn-DaCalc" id="5" onClick={onChange}>5</button>
+                                <button className="btn-DaCalc" id="6" onClick={onChange}>6</button>
+                                <button className="btn-DaCalc" id="me" onClick={onChange}>-</button>
+                                <br />
+                                <button className="btn-DaCalc" id="7" onClick={onChange}>7</button>
+                                <button className="btn-DaCalc" id="8" onClick={onChange}>8</button>
+                                <button className="btn-DaCalc" id="9" onClick={onChange}>9</button>
+                                <button className="btn-DaCalc" id="v" onClick={onChange}>*</button>
+                                <br />
+                                <button className="btn-DaCalc" id="c" onClick={Clear}>C</button>
+                                <button className="btn-DaCalc" id="0" onClick={onChange}>0</button>
+                                <button className="btn-DaCalc" id="=" onClick={onChange}>=</button>
+                                <button className="btn-DaCalc" id="d" onClick={onChange}>/</button>
                             </div>
-                            <button onClick={onChange} value={um}>1</button>
-                            <button onClick={onChange2} value={dois}>2</button>
-                            <button onClick={onChange} value={tres}>3</button>
-                            <button onClick={onSinais} value={mais}>+</button>
-                            <br />
-                            <button onClick={onChange2} value={quatro}>4</button>
-                            <button onClick={onChange} value={cinco}>5</button>
-                            <button onClick={onChange2} value={seis}>6</button>
-                            <button onClick={onSinais} value={menos}>-</button>
-                            <br />
-                            <button onClick={onChange} value={sete}>7</button>
-                            <button onClick={onChange2} value={oito}>8</button>
-                            <button onClick={onChange} value={nove}>9</button>
-                            <button onClick={onSinais} value={multiplicar}>*</button>
-                            <br />
-                            <button>C</button>
-                            <button onClick={onChange2} value={zero}>0</button>
-                            <button onClick={Result}>=</button>
-                            <button onClick={onSinais} value={dividir}>/</button>
                             <br />
                             <hr />
-                            <button onClick={ToBack}>Voltar</button>
+                            <br />
+                            <button className="btn-ToBack" onClick={ToBack}>Voltar</button>
                         </div>
                     </Title>
                 </Container>
             </Fragment>
         </ThemeProvider>
-
     )
 }
