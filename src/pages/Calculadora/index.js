@@ -78,18 +78,16 @@ export default function CalcCalcula() {
             setValorDisplay(`${valorDigitado}${e.target.id}`)
         }
     }
+    /* eslint-disable */
     useEffect(() => {
-        console.log(`Disparou Calc:${calcular}`);
-        console.log(`Resultado acumulado:${resultado}`);
-        ExecutaCalc();
-
+        ExecutaCalc()
     }, [calcular])
 
     useEffect(() => {
 
             setValorDisplay(`${resultado} ${operador}`);
      
-    }, [resultado])
+    }, [resultado,operador])
 
 
     function Clear() {
