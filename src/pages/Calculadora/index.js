@@ -3,7 +3,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from '../../Temas/theme';
 import GlobalTheme from '../../Temas/globals';
 import '../Layouts/Calculadora.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
 
 const Container = styled.div`
 align-items: center;
@@ -32,7 +31,7 @@ export default function CalcCalcula() {
 
     const [resultado, setResultado] = useState('0')
 
-    const [igual, setIgual] = useState(false);
+    // const [, setIgual] = useState(false);
 
     const [calcAcu, setCalcAcu] = useState('');
 
@@ -41,10 +40,11 @@ export default function CalcCalcula() {
         let opera = '';
         if (array.indexOf(e.target.id) === -1) {
             if (e.target.id === "=") {
-                setIgual(true);
+               
                 if (valorDigitado !== "") {
                     setCalcular(valorDigitado);
                 } else {
+                    setOperador('');
                     setValorDisplay(resultado)
                 }
 
@@ -62,7 +62,7 @@ export default function CalcCalcula() {
                     opera = '-';
                 }
                 setOperador(opera);
-                setIgual(false);
+     
                 if (valorDigitado !== "") {
                     setCalcular(valorDigitado);
                     setValorDisplay(`${valorDigitado}${opera}`);
@@ -83,16 +83,12 @@ export default function CalcCalcula() {
         console.log(`Resultado acumulado:${resultado}`);
         ExecutaCalc();
 
-
     }, [calcular])
 
     useEffect(() => {
 
-        if (igual) {
-            setValorDisplay(`${resultado}`);
-        } else {
             setValorDisplay(`${resultado} ${operador}`);
-        }
+     
     }, [resultado])
 
 
