@@ -13,7 +13,7 @@ font-size: 14px;
 `;
 
 
-export default function CalcMedia() {
+ function CalcMedia() {
 
     const [theme, setTheme] = useState('light')
 

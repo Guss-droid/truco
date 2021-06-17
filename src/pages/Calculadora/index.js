@@ -12,7 +12,7 @@ const Title = styled.p`
 font-size: 14px;
 `;
 
-export default function CalcCalcula() {
+function CalcCalcula() {
 
     const [theme, setTheme] = useState('light')
 

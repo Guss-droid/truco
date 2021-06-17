@@ -8,8 +8,6 @@ import MarcadorP from './pages/MarcadorP';
 import MarcadorM from './pages/MarcadorM';
 import Initial from './pages/Inicial';
 import Calculos from './pages/Calculos';
-import CalcMedia from './pages/Media';
-import CalcCalcula from './pages/Calculadora';
 
 export default function Routes() {
   return (
@@ -17,8 +15,6 @@ export default function Routes() {
       <Switch>
         <Route exact path="/" component={Initial} />
         <Route path="/Calculo" component={Calculos} />
-        <Route path="/Media" component={CalcMedia} />
-        <Route path="/Calculadora" component={CalcCalcula} />
         <Route path="/Historia" component={Main} />
         <Route path="/Paulista" component={Paulista} />
         <Route path="/Mineiro" component={Mineiro} />

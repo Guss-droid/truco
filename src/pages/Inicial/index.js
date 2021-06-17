@@ -51,14 +51,6 @@ export default function Initial() {
         window.location.href = "/Historia"
     }
 
-    function toMedia() {
-        window.location.href = "/Media"
-    }
-
-    function ToCalculadora() {
-        window.location.href = "/Calculadora"
-    }
-
     return (
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
             <Fragment>
@@ -84,22 +76,6 @@ export default function Initial() {
                                 </button>
                             </section>
                             <br />
-                            <hr />
-                            <section>
-                                <h2>Calcular a média</h2>
-
-                                <button className="btn-IrMedia" onClick={toMedia}>
-                                    <FontAwesomeIcon icon="pen" />
-                                </button>
-                            </section>
-                            <br />
-                            <hr />
-                            <section>
-                                <h2>Calculadora</h2>
-                                <button className="btn-IrCalc" onClick={ToCalculadora}>
-                                    <FontAwesomeIcon icon="calculator" />
-                                </button>
-                            </section>
                             <hr />
                         </div>
                     </Title>
